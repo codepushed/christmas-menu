@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
+
+body {
+  background-color: #141414;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.logoXmasContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.logoXmas {
+  height: 20%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoXmas > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.menuContainer {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 30px;
+}
+
+.menuContainer > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.menuHeading {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 300;
+  color: #d4af7e;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 50px;
+}
+
+.menuSelectors {
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af7e;
+}
+
+.menuSelectors > h1 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 300;
+}
+
+.menuSelectors > p {
+  font-family: "Lora", serif;
+  width: 100%;
+  margin-top: -15px;
+}
+
+
+ul {
+  list-style-type: none;
+  color: #fff;
+  text-align: center;
+  margin-top: 80px;
+}
+
+li {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+li:hover{
+  text-decoration: underline;
+}

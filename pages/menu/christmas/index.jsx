@@ -1,4 +1,4 @@
-export default function Home() {
+ const Christmas = () => {
   return (
     <div>
       <div className="logoContainer">
@@ -12,9 +12,11 @@ export default function Home() {
       </div>
 
       <div className="menuContainer">
-        <img src="/christmanOne.jpg" alt="menu" />
-        <img src="/christmasTwo.jpg" alt="menu" />
+        <img src="/assets/menu/christmas/christmanOne.jpg" alt="menu" />
+        <img src="/assets/menu/christmas/christmasTwo.jpg" alt="menu" />
       </div>
     </div>
   );
 }
+
+export default Christmas;
