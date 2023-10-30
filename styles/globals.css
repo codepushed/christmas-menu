@@ -81,8 +81,9 @@ ul {
   list-style-type: none;
   color: #fff;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 50px;
   text-decoration: none;
+  padding: 0;
 }
 
 li {
@@ -91,6 +92,11 @@ li {
   font-size: 45px;
   margin-bottom: 15px;
   color: #fff;
+}
+
+li > a {
+  color: #fff;
+  text-decoration: none;
 }
 
 li:hover{
