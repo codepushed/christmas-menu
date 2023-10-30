@@ -82,6 +82,7 @@ ul {
   color: #fff;
   text-align: center;
   margin-top: 80px;
+  text-decoration: none;
 }
 
 li {
@@ -89,6 +90,7 @@ li {
   cursor: pointer;
   font-size: 45px;
   margin-bottom: 15px;
+  color: #fff;
 }
 
 li:hover{
