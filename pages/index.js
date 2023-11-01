@@ -16,7 +16,7 @@ const Home = () => {
       <ul>
         <li>
           <a
-            href="https://cheery-cocada-347371.netlify.app/menu/early-bird"
+            href="https://www.canva.com/design/DAFwTqAAjO8/qOxDb_iUIe1b6RqivQlkjg/view?utm_content=DAFwTqAAjO8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
             target="_blank"
           >
             Early Bird Special
