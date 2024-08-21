@@ -16,7 +16,7 @@ const Home = () => {
       <ul>
         <li>
           <a
-            href="https://www.canva.com/design/DAFwTqAAjO8/qOxDb_iUIe1b6RqivQlkjg/view?utm_content=DAFwTqAAjO8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+            href="/menu/early-bird"
             target="_blank"
           >
             Early Bird Special

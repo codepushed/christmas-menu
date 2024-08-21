@@ -8,7 +8,7 @@ const EarlyBird = () => {
       </div>
 
       <div className="menuContainer">
-        <img src="/assets/menu/drinks/drinksOne.jpg" alt="menu" />
+        <img src="/earlybirdmenu.jpg" alt="menu" />
       </div>
     </div>
   );
