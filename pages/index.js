@@ -46,6 +46,14 @@ const Home = () => {
             Drinks
           </a>
         </li>
+        <li>
+          <a
+            href="https://cheery-cocada-347371.netlify.app/menu/caterer-menu"
+            target="_blank"
+          >
+            Caterer's Menu
+          </a>
+        </li>
       </ul>
     </div>
   );
