@@ -1,4 +1,36 @@
+# Christmas Menu Website
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Menu Admin Feature
+
+This website includes an admin page for managing menus. The admin page allows you to:
+
+- View all existing menus
+- Add new menus with multiple images or PDF files
+- Update existing menus (rename or replace files)
+- Delete menus
+
+The admin page uses Firebase for storage and database functionality.
+
+### Firebase Setup
+
+1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+2. Enable Firebase Storage and Firestore Database in your project
+3. Set up authentication rules for Storage and Firestore to secure your data
+4. Get your Firebase configuration from Project Settings > General > Your apps > SDK setup and configuration
+5. Update the Firebase configuration in `/firebase/config.js` with your own credentials:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+```
 
 ## Getting Started
 
