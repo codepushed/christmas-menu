@@ -89,7 +89,7 @@ ul {
 li {
   text-decoration: none;
   cursor: pointer;
-  font-size: 45px;
+  font-size: 45px !important;
   margin-bottom: 15px;
   color: #fff;
 }
