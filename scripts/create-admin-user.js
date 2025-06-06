@@ -3,7 +3,7 @@ const { createClient } = require('@supabase/supabase-js');
 
 // Create a Supabase client with admin privileges
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://lnktdrnuumnbppvbznkr.supabase.co';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxua3Rkcm51dW1uYnBwdmJ6bmtyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTE0MTMyMCwiZXhwIjoyMDY0NzE3MzIwfQ.RD-rqMArKioZFfE2mSlDtStOBXSKOJ01_h7sJVHI8q4';
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseServiceKey) {
   console.error('Error: SUPABASE_SERVICE_ROLE_KEY is required to create users');
