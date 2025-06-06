@@ -70,7 +70,7 @@ const Home = () => {
         )}
       </ul>
 
-      <div className={styles.footer} style={{ position: "absolute", bottom: "0", left: "0", right: "0", textAlign: "center" }}>
+      <div className={styles.footer}>
         <p className={styles.poweredBy}>Powered by</p>
         <a href="mailto:mehrashubham216@gmail.com" className={styles.brandLink}>
           <h2 className={styles.brandName}>Kwiktable</h2>
