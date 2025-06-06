@@ -28,8 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 .env*.example
+.env.template
 .env
-!.env.example  # Keep the template file
+!.env.template  # Keep the template file
 
 # vercel
 .vercel
