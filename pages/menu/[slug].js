@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from "react";
-import Head from "next/head";
-import { supabase } from "../../../lib/supabase";
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { supabase } from '../../lib/supabase';
 
-const Drinks = () => {
+const MenuPage = () => {
+  const router = useRouter();
+  const { slug } = router.query;
   const [menu, setMenu] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [fileUrls, setFileUrls] = useState([]);
 
   useEffect(() => {
-    const fetchMenu = async () => {      
+    const fetchMenu = async () => {
+      if (!slug) return;
+      
       try {
+        // Query Supabase for the menu with this slug
         const { data, error } = await supabase
           .from('menus')
           .select('*')
-          .eq('slug', 'drinks')
+          .eq('slug', slug)
           .single();
         
         if (error) {
@@ -23,67 +28,18 @@ const Drinks = () => {
           return;
         }
         
+        // Transform the data to match our expected format
         setMenu({
           id: data.id,
           name: data.name,
           slug: data.slug,
-          fileUrls: data.file_urls || [],
+          fileUrls: data.file_urls,
           createdAt: data.created_at,
           updatedAt: data.updated_at
         });
-
-        // If file_urls exist in the menu data, use them directly
-        if (data.file_urls && data.file_urls.length > 0) {
-          setFileUrls(data.file_urls);
-        } 
-        // Otherwise, try to list files from storage
-        else {
-          const { data: storageData, error: storageError } = await supabase
-            .storage
-            .from('menu-files')
-            .list('drinks');
-          
-          if (storageError) {
-            console.error('Error listing files from storage:', storageError);
-          } else {
-            
-            if (storageData && storageData.length > 0) {
-              const sortedFiles = [...storageData].sort((a, b) => {
-                // Try to extract the numeric suffix after the dash
-                const suffixA = a.name.split('-')[1];
-                const suffixB = b.name.split('-')[1];
-                
-                if (suffixA && suffixB) {
-                  // Extract the number before the file extension
-                  const numA = parseInt(suffixA.split('.')[0]);
-                  const numB = parseInt(suffixB.split('.')[0]);
-                  if (!isNaN(numA) && !isNaN(numB)) {
-                    return numA - numB;
-                  }
-                }
-                
-                // Fall back to alphabetical sort if the format is different
-                return a.name.localeCompare(b.name);
-              });
-              
-              
-              // Get public URLs for each file
-              const urls = sortedFiles.map(file => {
-                const { data: urlData } = supabase
-                  .storage
-                  .from('menu-files')
-                  .getPublicUrl(`drinks/${file.name}`);
-                return urlData.publicUrl;
-              });
-              
-              setFileUrls(urls);
-            } else {
-              console.log('No files found in storage');
-            }
-          }
-        }
         
       } catch (err) {
+        console.error('Error fetching menu:', err);
         setError('Failed to load menu');
       } finally {
         setLoading(false);
@@ -91,13 +47,17 @@ const Drinks = () => {
     };
     
     fetchMenu();
-  }, []);
+  }, [slug]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+  if (!menu) return <div>Menu not found</div>;
 
   return (
     <div>
       <Head>
-        <title>{menu ? `${menu.name} | By Kwiktable` : 'Drinks Menu | By Kwiktable'}</title>
-        <meta name="description" content={menu ? `${menu.name} menu by Kwiktable` : 'Drinks menu by Kwiktable'} />
+        <title>{menu.name} | By Kwiktable</title>
+          <meta name="description" content="Kwiktable provide one tap menu creation and ordering experience" />
           <meta name="keywords" content="Menus, Kwiktable, Menu Management, Ordering, Restaurant, Food" />
           <meta name="author" content="Kwiktable" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -115,27 +75,12 @@ const Drinks = () => {
         <img src="/logo.png" alt="logo" />
       </div>
 
-      {loading ? (
-        <div className="loadingContainer">
-          <p>Loading menu...</p>
-        </div>
-      ) : error ? (
-        <div className="errorContainer">
-          <p>{error}</p>
-        </div>
-      ) : (
-        <div className="menuContainer">
-          {/* Use fileUrls which contains either the database URLs or storage URLs */}
-          {fileUrls.length > 0 ? (
-            fileUrls.map((url, index) => (
-              <img key={index} src={url} alt={`${menu?.name || 'Drinks'} menu page ${index + 1}`} />
-            ))
-          ) : (
-            <p>No menu images available. Please add menu images in the admin panel.</p>
-          )}
-        </div>
-      )}
-      
+      <div className="menuContainer">
+        {menu.fileUrls && menu.fileUrls.map((url, index) => (
+          <img key={index} src={url} alt={`${menu.name} menu page ${index + 1}`} />
+        ))}
+      </div>
+
       <div className="footer">
         <p className="poweredBy">Powered by</p>
         <a href="mailto:mehrashubham216@gmail.com" className="brandLink">
@@ -181,7 +126,7 @@ const Drinks = () => {
         .poweredBy {
           font-size: 12px;
           font-weight: 300;
-          color: #fff;
+          color: #666;
           opacity: 0.7;
           margin-bottom: 0.5rem;
         }
@@ -189,7 +134,7 @@ const Drinks = () => {
         .brandName {
           font-family: 'Kaushan Script', cursive;
           font-size: 24px;
-          color: #fff;
+          color: #333;
           margin: 0;
         }
         
@@ -207,4 +152,4 @@ const Drinks = () => {
   );
 };
 
-export default Drinks;
+export default MenuPage;

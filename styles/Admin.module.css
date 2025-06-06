@@ -1,0 +1,361 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #141414;
+  color: #e0e0e0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.logoContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.logoContainer img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Header logo styles */
+.header .logoContainer {
+  margin-bottom: 0;
+  padding: 0;
+  margin-right: 1rem;
+}
+
+.header .logoContainer img {
+  max-width: 50px;
+  height: auto;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+}
+
+.header h1 {
+  margin: 0;
+  color: #d4af37;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.headerLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.backLink {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: #b8860b;
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  background-color: #141414;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: #b8860b;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.homeLink {
+  padding: 8px 16px;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #d4af37;
+  /* Gold color */
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.homeLink:hover {
+  background-color: #333;
+}
+
+.adminContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .adminContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.menuList,
+.addMenu,
+.updateMenu {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menuTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.menuTable th,
+.menuTable td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.menuTable th {
+  color: #d4af37;
+  /* Gold color */
+  background-color: #1e1e1e;
+}
+
+.menuPreview {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  border: 1px solid #d4af37;
+  /* Gold border */
+  padding: 2px;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #d4af37;
+  /* Gold color */
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 1rem 0px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.addButton,
+.saveButton {
+  padding: 0.5rem 1rem;
+  background-color: #d4af37;
+  /* Gold color */
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.addButton:hover,
+.saveButton:hover {
+  background-color: #b8860b;
+  /* Darker gold */
+}
+
+.cancelButton {
+  padding: 10px 16px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cancelButton:hover {
+  background-color: #333;
+}
+
+.editButton {
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.editButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+.error {
+  background-color: #3a1010;
+  color: #ff5252;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #c62828;
+}
+
+.success {
+  background-color: #1e3620;
+  color: #81c784;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #2e7d32;
+}
+
+.filePreview {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.footer {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.poweredBy {
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.brandName {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 34px;
+  color: white;
+  margin: 0;
+}
+
+.brandLink {
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.brandLink:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile message styles */
+.mobileMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMessageContent {
+  padding: 1rem;
+}
+
+.mobileMessageContent h2 {
+  color: #d4af37;
+  /* Gold color */
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.mobileMessageContent p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #d4af37;
+  /* Gold color */
+  color: #141414;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.backButton:hover {
+  background-color: #b8860b;
+  /* Darker gold */
+  transform: translateY(-2px);
+}
