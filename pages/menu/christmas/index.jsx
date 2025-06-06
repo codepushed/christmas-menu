@@ -101,8 +101,17 @@ const Christmas = () => {
       <Head>
         <title>{menu ? `${menu.name} | By Kwiktable` : 'Christmas Menu | By Kwiktable'}</title>
         <meta name="description" content={menu ? `${menu.name} menu by Kwiktable` : 'Christmas menu by Kwiktable'} />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" />
+          <meta name="keywords" content="Menus, Kwiktable, Menu Management, Ordering, Restaurant, Food" />
+          <meta name="author" content="Kwiktable" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+          <meta property="og:url" content="https://kwiktable.com/seoImgs.png" />
+        <meta property="og:image:secure_url" content="https://kwiktable.com/seoImgs.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Menus | By Kwiktable" />
+        <meta property="twitter:description" content="Kwiktable provide one tap menu creation and ordering experience" />
+        <meta property="twitter:image" content="https://kwiktable.com/seoImgs.png" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" />
       </Head>
 
       <div className="logoContainer">

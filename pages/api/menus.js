@@ -1,6 +1,11 @@
 import { formidable } from 'formidable';
 import { addMenu, getMenus, updateMenu, deleteMenu } from '../../lib/menuService';
 
+// Make sure service role key is available in the environment
+if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  console.warn('SUPABASE_SERVICE_ROLE_KEY is not defined in the environment. Some operations may fail due to RLS policies.');
+}
+
 // Disable the default body parser to handle form data
 export const config = {
   api: {
